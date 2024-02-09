@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+{% extends 'base.html' %}
+    {% block content %}
+    
+
+
+    <div class="register_page">
+        <h1>INSURANCE CLAIM</h1>
+
+        <div class="form">
+            
+            <form action="http://127.0.0.1:5000/predict" method="POST">
+                AGE: <input type="number" name='age'        > <br>
+                SEX: <input type="number" name='sex'><br>
+                BMI: <input type="number" name='bmi' ><br>
+                STEPS: <input type="number" name='steps' ><br>
+                CHILDREN: <input type="number" name='children' ><br>
+                SMOKER: <input type="number" name='smoker' ><br>
+                REGION: <input type="number" name='region' ><br>
+                CHARGES: <input type="number" name='charges' ><br>
+
+                <div class="submit">
+                  <input type="submit" value="PREDICT" >
+                </div>
+                
+              </form>
+        
+            <p> CAN YOU CLAIM INSURANCE: {{prediction}}</p>
+        </div>
+
+    </div>
+{% endblock %}
+
+
+</body>
+</html>
